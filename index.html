@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toallas Personalizadas para Mascotas</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(249 250 251);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background-color: rgb(249 115 22);
+            color: white;
+            padding: 1.5rem 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        header p {
+            font-size: 1.125rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: rgb(254 215 170);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 0.75rem 0;
+        }
+
+        nav .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: rgb(31 41 55);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: rgb(249 115 22);
+        }
+
+        .products {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1rem 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .products img {
+            width: 18rem;
+            height: 12rem;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .products img:hover {
+            transform: scale(1.05);
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: rgb(31 41 55);
+        }
+
+        .testimonial {
+            border-left: 4px solid rgb(249 115 22);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .testimonial p {
+            margin: 0.5rem 0;
+            color: rgb(75 85 99);
+            font-style: italic;
+        }
+
+        .testimonial .author {
+            font-weight: 600;
+            color: rgb(31 41 55);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: rgb(31 41 55);
+        }
+
+        .order-form {
+            background-color: rgb(255 247 237);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: rgb(31 41 55);
+        }
+
+        .form-label i {
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgb(209 213 219);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: rgb(249 115 22);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        .submit-button {
+            width: 100%;
+            background-color: rgb(249 115 22);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-button:hover {
+            background-color: rgb(234 88 12);
+        }
+
+        footer {
+            background-color: rgb(249 115 22);
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                flex-wrap: wrap;
+            }
+            
+            .products img {
+                width: 16rem;
+                height: 10rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🐾 Toallas Personalizadas para Mascotas</h1>
+            <p>La mejor calidad para consentir a tu compañero peludo</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="#productos">Productos</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#faq">Preguntas Frecuentes</a>
+                <a href="#comprar">Comprar</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="productos" class="products">
+            <img src="https://i.ibb.co/pZmZqZx/rosada.png" alt="Toalla Rosa">
+            <img src="https://i.ibb.co/HKWyvDc/cafe.jpg" alt="Toalla Marrón">
+            <img src="https://i.ibb.co/wBXjW5P/azul.jpg" alt="Toalla Azul">
+            <img src="https://i.ibb.co/5nbRDqc/crema.jpg" alt="Toalla Crema">
+            <img src="https://i.ibb.co/P48bDDV/amarilla.jpg" alt="Toalla Amarilla">
+        </section>
+
+        <section class="section">
+            <h2>¿Por qué nuestras toallas?</h2>
+            <p>Nuestras toallas están hechas con los mejores materiales para garantizar suavidad, absorción y durabilidad. Además, puedes personalizarlas con el nombre de tu mascota.</p>
+        </section>
+
+        <section id="testimonios" class="section">
+            <h2>Testimonios</h2>
+            <div class="testimonial">
+                <p>"Las toallas son suaves y a mi perrito le encantaron. La personalización quedó perfecta."</p>
+                <p class="author">- Luz M.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Muy buena calidad. Se nota que son hechas con amor y dedicación."</p>
+                <p class="author">- Carlos G.</p>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3>¿Cuánto tarda la entrega?</h3>
+                <p>Aproximadamente 5 a 7 días hábiles.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Cómo personalizo mi toalla?</h3>
+                <p>En el formulario de compra puedes indicar el nombre de tu mascota.</p>
+            </div>
+        </section>
+
+        <section id="comprar" class="order-form">
+    <h2>Haz tu Pedido</h2>
+ 
+</section>
+
+            <form id="orderForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="petName">Nombre de tu mascota</label>
+                    <input type="text" id="petName" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="color">Color de toalla</label>
+                    <select id="color" class="form-select">
+                        <option>Azul</option>
+                        <option>Rosa</option>
+                        <option>Verde</option>
+                        <option>Amarillo</option>
+                        <option>Marrón</option>
+                        <option>Gris</option>
+                        <option>Blanco</option>
+                        <option>Crema</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="address">
+                        <i data-lucide="map-pin"></i> Dirección
+                    </label>
+                    <input type="text" id="address" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="phone">
+                        <i data-lucide="phone"></i> Teléfono
+                    </label>
+                    <input type="tel" id="phone" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">
+                        <i data-lucide="mail"></i> Correo electrónico
+                    </label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+<section id="comprar" class="order-form" style="text-align: center; background-color: #f2f2f2; padding: 10px; border-radius: 8px;">
+    <h2 style="font-size: 30px; font-weight: bold; color: #000; margin: 0;">$28.900 und</h2>
+</section>
+
+
+                <button type="submit" class="submit-button">
+                    <i data-lucide="shopping-cart"></i>
+                    Comprar por WhatsApp
+                </button>
+            </form>
+        </section>
+    </main>
+
+<footer style="background-color: #fff7ed; color: #7c2d12;">
+    <div class="container" style="text-align: center; padding: 15px; font-family: Arial, sans-serif;">
+        <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #9a3412;">Horario y Condiciones de Envío</p>
+        <p>📦 <strong>Despachos:</strong> Lunes a Viernes de 9:00 a.m. a 5:00 p.m.</p>
+        <p>🚚 <strong>Modalidad:</strong> Envío Contra Entrega disponible.</p>
+        <p>🌍 <strong>Envíos Nacionales:</strong> Tiempo estimado de entrega: 5 días hábiles.</p>
+        <p>⚠️ <strong>Importante:</strong> Los tiempos de entrega pueden variar según la ubicación y la logística de la transportadora.</p>
+        <hr style="margin: 15px 0; border: 0.5px solid #fde68a;">
+        <p>© 2024 <strong>Toallas Personalizadas para Mascotas</strong>. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                petName: document.getElementById('petName').value,
+                color: document.getElementById('color').value,
+                address: document.getElementById('address').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value
+            };
+
+            const message = `
+🐾 Nuevo Pedido de Toalla Personalizada 🐾
+
+Nombre de mascota: ${formData.petName}
+Color: ${formData.color}
+Dirección: ${formData.address}
+Teléfono: ${formData.phone}
+Email: ${formData.email}
+            `;
+            
+            window.open(`https://wa.me/573204828022?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
